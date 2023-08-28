@@ -7,7 +7,9 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="devexpress.wpf.controls" Version="23.1.4" />
     <PackageReference Include="DevExpress.Wpf.Dashboard" Version="23.1.4" />
+    <PackageReference Include="devexpress.wpf.reporting" Version="23.1.4" />
   </ItemGroup>
 
   <ItemGroup>
