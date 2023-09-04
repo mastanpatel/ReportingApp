@@ -36,7 +36,7 @@
                 </dxr:RibbonPage>
             </dxr:RibbonDefaultPageCategory>
         </dxr:RibbonControl>
-        <dxrud:ReportDesigner HorizontalAlignment="Left" Margin="20,10,0,0" VerticalAlignment="Top"/>
+        <dxrud:ReportDesigner/>
 
     </Grid>
 </dx:ThemedWindow>
