@@ -9,11 +9,19 @@
         xmlns:dxb="http://schemas.devexpress.com/winfx/2008/xaml/bars"    
         xmlns:dxrud="http://schemas.devexpress.com/winfx/2008/xaml/reports/userdesigner"
         xmlns:dxg="http://schemas.devexpress.com/winfx/2008/xaml/grid" 
+        xmlns:Admin="clr-namespace:ReportingApp.Views.Admin" xmlns:av="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:VIewModel="clr-namespace:ReportingApp.VIewModel" mc:Ignorable="av" 
         x:Class="ReportingApp.MainWindow"    
-    Title="MainWindow" Height="800" Width="1000">
-    <Grid>
+    Title="MainWindow" av:DesignWidth="977" Height="795" Width="1080">
+    <dx:ThemedWindow.DataContext>
+        <VIewModel:VIewModel/>
+    </dx:ThemedWindow.DataContext>
+    <Grid Width="auto">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
+        </Grid.ColumnDefinitions>
         <!--<dxdash:DashboardControl x:Name="dashboardControl" DashboardSource="{x:Type local:SampleDashboard}" UseNeutralFilterMode="True"/>-->
-        <dxr:RibbonControl HorizontalAlignment="Stretch" RibbonStyle="Office2019" VerticalAlignment="Top">
+        <dxr:RibbonControl RibbonStyle="Office2019" VerticalAlignment="Stretch" Grid.ColumnSpan="2">
             <dxr:RibbonDefaultPageCategory>
                 <dxr:RibbonPage Caption="Home">
                     <dxr:RibbonPageGroup x:Name="pgFile" Caption="Options" 
@@ -36,7 +44,11 @@
                 </dxr:RibbonPage>
             </dxr:RibbonDefaultPageCategory>
         </dxr:RibbonControl>
-        <dxrud:ReportDesigner/>
+        <dxg:GridControl AutoGenerateColumns="AddNew" EnableSmartColumnsGeneration="True" Grid.ColumnSpan="2" Margin="0,159,0,-295" ItemsSource="{Binding Customers}">
+            <dxg:GridControl.View>
+                <dxg:TableView HorizontalAlignment="Stretch" Height="NaN" Margin="0,0,0,0" VerticalAlignment="Stretch" Width="auto" AlternateRowBackground="#FFA2C3D8"/>
+            </dxg:GridControl.View>
+        </dxg:GridControl>
 
     </Grid>
 </dx:ThemedWindow>
